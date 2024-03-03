@@ -31,8 +31,10 @@ app.post("/", function(req, res) {
         response.on("data", function(data){
             const weatherData = JSON.parse(data);
             const temp = weatherData.main.temp;
+          // added new individual items
             const humidity = weatherData.main.humidity;
             const windSpeed = weatherData.wind.speed;
+          
             const weatherDescription = weatherData.weather[0].description;
             const icon = weatherData.weather[0].icon;
             const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
